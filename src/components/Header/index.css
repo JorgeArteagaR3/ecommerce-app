@@ -1,0 +1,30 @@
+.header-nav {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+    align-items: center;
+}
+h1 {
+    font-size: 1.8rem;
+    font-weight: bolder;
+}
+ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+a {
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+}
+.icons-container {
+    display: flex;
+    gap: 10px;
+}
+.hero-text {
+    font-size: 5rem;
+    color: white;
+    margin-bottom: 6em;
+}
