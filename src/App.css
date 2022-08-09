@@ -1,11 +1,12 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 .App {
     text-align: center;
 }
-:root {
-    --text: #1b3849;
-    --backg: #e9e1dd;
-    --newblack: #252322;
-}
+
 .App-logo {
     height: 40vmin;
     pointer-events: none;
@@ -13,60 +14,4 @@
 * {
     font-family: Zubayr, sans-serif;
     color: var(--text);
-}
-.hero {
-    height: 600px;
-    width: 100%;
-    display: flex;
-    position: relative;
-    align-items: center;
-    justify-content: center;
-    animation: moveDown 1s ease-in-out forwards;
-}
-.hero::after {
-    content: "";
-    background: url("./assets/images/hero.jpg");
-    background-size: cover;
-    background-position: center;
-    opacity: 0.7;
-    background-repeat: no-repeat;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    z-index: -1;
-    animation: introLoad 2s forwards;
-}
-.down-arrow {
-    position: absolute;
-    bottom: 5em;
-    left: 5em;
-    width: 1rem;
-    animation: moveArrow 1s alternate-reverse infinite;
-}
-@keyframes moveArrow {
-    from {
-        transform: translateY(-30px);
-    }
-    to {
-        transform: translateY(0px);
-    }
-}
-@keyframes moveDown {
-    from {
-        transform: translateY(-100px);
-    }
-    to {
-        transform: translateY(0px);
-        opacity: 1;
-    }
-}
-@keyframes introLoad {
-    from {
-        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-    }
-    to {
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    }
 }

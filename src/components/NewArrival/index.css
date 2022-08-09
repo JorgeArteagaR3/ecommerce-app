@@ -1,0 +1,9 @@
+.new-arrival-container {
+    margin-top: 2em;
+}
+
+.new-arrivals {
+    margin-top: 2em;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}

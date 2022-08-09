@@ -25,6 +25,7 @@ const Header = () => {
                 <div className="icons-container">
                     <FiSearch size="20px" />
                     <IoBagHandleOutline size="20px" />
+
                     <HiOutlineUser size="20px" />
                 </div>
             </nav>

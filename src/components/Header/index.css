@@ -1,3 +1,7 @@
+header {
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
 .header-nav {
     display: flex;
     justify-content: space-between;
@@ -13,6 +17,7 @@ ul {
     list-style: none;
     display: flex;
     gap: 20px;
+    padding-left: 0;
 }
 a {
     text-decoration: none;
@@ -22,9 +27,4 @@ a {
 .icons-container {
     display: flex;
     gap: 10px;
-}
-.hero-text {
-    font-size: 5rem;
-    color: white;
-    margin-bottom: 6em;
 }

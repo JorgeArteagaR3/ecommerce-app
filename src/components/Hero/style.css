@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap");
+
+.hero {
+    height: 600px;
+    width: 100%;
+    display: flex;
+    position: relative;
+    align-items: center;
+    text-align: left;
+    justify-content: right;
+    animation: moveDown 1s ease-in-out forwards;
+    padding-right: 10%;
+}
+.hero::after {
+    content: "";
+    background-image: url(../../assets/images/juice.jpg);
+    background-size: 800px;
+    background-position: left;
+    opacity: 1;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 10%;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    animation: introLoad 2s forwards;
+}
+.hero-text > span {
+    font-size: 5rem;
+    display: block;
+    font-weight: bolder;
+    position: relative;
+    color: var(--newblack);
+    font-family: "Poppins", sans-serif;
+    letter-spacing: 7px;
+}
+.hero-text > span::before {
+    position: absolute;
+    inset: 0;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: hero-animation 9s infinite;
+    animation-delay: var(--delay);
+}
+.hypeyour::before {
+    content: "HYPE YOUR";
+    background: linear-gradient(90deg, #d68935, #a4243b);
+}
+.street::before {
+    content: "STREET";
+    background: linear-gradient(90deg, #b81365, #7d8cc4);
+}
+.style::before {
+    content: "STYLE";
+    background: linear-gradient(90deg, #11b5e4, #f0e100);
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    width: 1rem;
+    animation: moveArrow 1s alternate-reverse infinite;
+}
+.scroll-down > span {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-weight: 800;
+    color: var(--newblack);
+    display: block;
+    margin-bottom: 2em;
+    letter-spacing: 2px;
+}
+.scroll-down > svg > path {
+    fill: var(--newblack);
+}
+@keyframes hero-animation {
+    0%,
+    16.667%,
+    100% {
+        opacity: 1;
+    }
+    33.333%,
+    83.333% {
+        opacity: 0;
+    }
+}
+@keyframes moveArrow {
+    from {
+        transform: translateY(-30px);
+    }
+    to {
+        transform: translateY(0px);
+    }
+}
+@keyframes moveDown {
+    from {
+        transform: translateY(-100px);
+    }
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+@keyframes introLoad {
+    from {
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+    to {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}
