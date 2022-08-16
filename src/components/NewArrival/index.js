@@ -1,42 +1,25 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./index.css";
 import { Item } from "../Item";
-const NewArrival = () => {
-    const products = [
-        {
-            name: "Universal Coz Polo",
-            price: "78",
-            color: "Black",
-            sizes: ["S", "M", "L", "XL", "XXL"],
-            id: "pN5ok9",
-            img: "https://i.imgur.com/ZAaM1Nt.png",
-        },
-        {
-            name: "Fear of God Essentials",
-            price: "63",
-            color: "Harvest",
-            sizes: ["S", "M", "L", "XL", "XXL"],
-            id: "IklaSo",
-            img: "https://i.imgur.com/ODVJTlv.png",
-        },
-        {
-            name: "Universal Coz Polo",
-            price: "78",
-            color: "Black",
-            sizes: ["S", "M", "L", "XL", "XXL"],
-            id: "pN5ok9",
-            img: "https://i.imgur.com/ZAaM1Nt.png",
-        },
-        {
-            name: "Fear of God Essentials",
-            price: "63",
-            color: "Harvest",
-            sizes: ["S", "M", "L", "XL", "XXL"],
-            id: "IklaSo",
-            img: "https://i.imgur.com/ODVJTlv.png",
-        },
-    ];
-    const [arrival, setArrival] = useState(products);
+const NewArrival = ({ saveItem }) => {
+    const [arrival, setArrival] = useState([]);
+    useEffect(() => {
+        getProducts();
+    }, []);
+
+    async function getProducts() {
+        const res = await fetch(
+            "https://fakestoreapi.com/products/category/men's clothing"
+        );
+        const data = await res.json();
+        const newItems = data.map((item) => {
+            item["sizes"] = ["S", "M", "L", "XL", "XXL"];
+            item["color"] = "black";
+
+            return item;
+        });
+        setArrival(newItems);
+    }
     return (
         <div className="new-arrival-container">
             <h2>NEW ARRIVAL</h2>
@@ -44,11 +27,14 @@ const NewArrival = () => {
                 {arrival.map((product) => {
                     return (
                         <Item
+                            saveItem={saveItem}
                             arrival={arrival}
                             setArrival={setArrival}
                             key={product.id}
-                            image={product.img}
-                            name={product.name}
+                            id={product.id}
+                            image={product.image}
+                            sizes={product.sizes}
+                            name={product.title}
                             price={product.price}
                             color={product.color}
                         />

@@ -3,7 +3,7 @@ import { FiSearch } from "react-icons/fi";
 import { IoBagHandleOutline } from "react-icons/io5";
 import { HiOutlineUser } from "react-icons/hi";
 import "./index.css";
-const Header = () => {
+const Header = ({ openBag, setOpenBag }) => {
     return (
         <header>
             <nav className="header-nav">
@@ -24,9 +24,13 @@ const Header = () => {
                 </ul>
                 <div className="icons-container">
                     <FiSearch size="20px" />
-                    <IoBagHandleOutline size="20px" />
-
                     <HiOutlineUser size="20px" />
+                    <IoBagHandleOutline
+                        onClick={() => {
+                            setOpenBag(!openBag);
+                        }}
+                        size="20px"
+                    />
                 </div>
             </nav>
         </header>

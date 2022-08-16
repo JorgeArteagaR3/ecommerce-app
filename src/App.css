@@ -15,3 +15,6 @@
     font-family: Zubayr, sans-serif;
     color: var(--text);
 }
+.App {
+    position: relative;
+}

@@ -26,5 +26,8 @@ a {
 }
 .icons-container {
     display: flex;
-    gap: 10px;
+    gap: 20px;
+}
+.icons-container > svg {
+    cursor: pointer;
 }
