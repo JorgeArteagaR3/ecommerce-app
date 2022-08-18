@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./index.css";
 import { Item } from "../Item";
-const NewArrival = ({ saveItem }) => {
-    const [arrival, setArrival] = useState([]);
+const NewArrival = ({ saveItem, openBagFunc }) => {
+    const [products, setProducts] = useState([]);
     useEffect(() => {
         getProducts();
     }, []);
@@ -18,18 +18,19 @@ const NewArrival = ({ saveItem }) => {
 
             return item;
         });
-        setArrival(newItems);
+        setProducts(newItems);
     }
     return (
         <div className="new-arrival-container">
             <h2>NEW ARRIVAL</h2>
             <div className="new-arrivals">
-                {arrival.map((product) => {
+                {products.map((product) => {
                     return (
                         <Item
+                            openBagFunc={openBagFunc}
                             saveItem={saveItem}
-                            arrival={arrival}
-                            setArrival={setArrival}
+                            products={products}
+                            setProducts={setProducts}
                             key={product.id}
                             id={product.id}
                             image={product.image}

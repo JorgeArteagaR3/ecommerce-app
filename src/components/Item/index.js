@@ -1,11 +1,22 @@
 import React from "react";
 import "./style.css";
-const Item = ({ arrival, image, name, color, price, sizes, id, saveItem }) => {
+const Item = ({
+    products,
+    image,
+    name,
+    color,
+    price,
+    sizes,
+    id,
+    saveItem,
+    openBagFunc,
+}) => {
     const sendBagItem = (e) => {
-        const filteredItem = arrival.find((item) => item.id === id);
+        const filteredItem = products.find((item) => item.id === id);
         filteredItem["size"] = e.target.textContent;
         filteredItem["quantity"] = 1;
         console.log(filteredItem);
+        openBagFunc();
         saveItem(filteredItem);
     };
     return (

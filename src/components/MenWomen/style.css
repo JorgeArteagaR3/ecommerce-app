@@ -1,0 +1,44 @@
+.men-women-container {
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 900px;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.man-container > img {
+    height: 100%;
+    object-fit: cover;
+}
+.women-container > img {
+    height: 100%;
+    transform: scaleX(-1);
+    object-fit: cover;
+}
+.image-content {
+    position: relative;
+}
+.image-content > div {
+    position: absolute;
+    z-index: 1;
+    bottom: 150px;
+    left: 100px;
+}
+.image-content > div > p {
+    font-size: 1.6rem;
+    color: white;
+    margin-bottom: 1em;
+}
+.image-content > div > a {
+    background: none;
+    border: 1px solid white;
+    color: white;
+    padding: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.image-content > div > a:hover {
+    background-color: white;
+    color: black;
+}

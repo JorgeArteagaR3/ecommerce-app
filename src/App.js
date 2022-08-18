@@ -1,10 +1,13 @@
 import { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
-import { BagModal } from "./components/BagModal";
+import { GenderClothing } from "./components/GenderClothing";
 import { Header } from "./components/Header";
-import { Hero } from "./components/Hero";
-import { NewArrival } from "./components/NewArrival";
+import { Home } from "./components/Home/index";
+
 function App() {
+    const [openBag, setOpenBag] = useState(false);
+    const openBagFunc = () => setOpenBag(!openBag);
     const localStorageProducts =
         JSON.parse(localStorage.getItem("bag-product")) || [];
     const [bagItems, setBagItems] = useState(localStorageProducts || []);
@@ -23,21 +26,31 @@ function App() {
         localStorage.setItem("bag-product", stringifiedItem);
         setBagItems(item);
     };
-
-    const [openBag, setOpenBag] = useState(false);
-
     return (
         <div className="App">
-            <Header openBag={openBag} setOpenBag={setOpenBag} />
-            <Hero />
-            <NewArrival saveItem={saveItem} />
-            <BagModal
-                openBag={openBag}
-                setOpenBag={setOpenBag}
-                bagItems={bagItems}
-                setBagItems={setBagItems}
-                deleteItem={deleteItem}
-            />
+            <BrowserRouter>
+                <Header openBag={openBag} setOpenBag={setOpenBag} />
+                <Routes>
+                    <Route
+                        path="/"
+                        element={
+                            <Home
+                                openBag={openBag}
+                                setOpenBag={setOpenBag}
+                                saveItem={saveItem}
+                                bagItems={bagItems}
+                                setBagItems={setBagItems}
+                                deleteItem={deleteItem}
+                                openBagFunc={openBagFunc}
+                            />
+                        }
+                    />
+                    <Route
+                        path="/clothing/:gender"
+                        element={<GenderClothing />}
+                    />
+                </Routes>
+            </BrowserRouter>
         </div>
     );
 }

@@ -28,6 +28,9 @@
     align-items: center;
     gap: 20px;
 }
+.back-cart-container > p {
+    font-size: 0.9rem;
+}
 .back-arrow {
     transform: rotate(270deg);
     cursor: pointer;
@@ -51,7 +54,7 @@
 }
 .bag-item {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 40% 40% 20%;
     justify-items: center;
     align-items: center;
     border-bottom: 1px solid #ddd;
@@ -60,9 +63,10 @@
 .img-container {
     width: 100%;
     height: 100%;
+    padding: 1em;
 }
 .img-container > img {
-    width: 100px;
+    width: 90px;
 }
 .bag-item--details {
     display: flex;
@@ -81,7 +85,7 @@
     font-size: 0.7rem;
 }
 .bag-item--details > .name {
-    font-weight: bold;
+    font-size: 0.8rem;
 }
 .increaser {
     border: 1px solid #ddd;
@@ -93,7 +97,7 @@
     padding: 0.3em 0.6em;
     font-weight: bold;
     color: var(--newblack);
-    font-size: 1.3rem;
+    font-size: 0.8rem;
     cursor: pointer;
 }
 .increaser > .quantity {
@@ -112,10 +116,11 @@
 .price-container > * {
     font-weight: bold;
     color: var(--newblack);
+    font-size: 0.8rem;
 }
 .checkout-container {
     width: 100%;
-    height: 150px;
+    height: 20%;
     border-top: 1px solid var(--newblack);
     padding-left: 1.6em;
     padding-right: 1.6em;
@@ -130,10 +135,10 @@
 .subtotal > * {
     font-weight: bold;
     color: var(--newblack);
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 .taxes {
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     color: var(--newblack);
     display: block;
     width: 100%;
@@ -145,7 +150,7 @@
     background: var(--newblack);
     padding: 1em;
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 0.8rem;
     width: 100%;
     cursor: pointer;
 }

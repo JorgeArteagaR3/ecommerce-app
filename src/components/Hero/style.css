@@ -32,8 +32,7 @@
     font-weight: bolder;
     position: relative;
     color: var(--newblack);
-    font-family: "Poppins", sans-serif;
-    letter-spacing: 7px;
+    font-family: MonumentBlack, sans-serif;
 }
 .hero-text > span::before {
     position: absolute;
@@ -66,7 +65,7 @@
 .scroll-down > span {
     writing-mode: vertical-rl;
     transform: rotate(180deg);
-    font-weight: 800;
+
     color: var(--newblack);
     display: block;
     margin-bottom: 2em;

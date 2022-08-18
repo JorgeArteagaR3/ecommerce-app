@@ -1,6 +1,6 @@
 header {
-    padding-top: 1em;
-    padding-bottom: 1em;
+    padding-top: 1.5em;
+    padding-bottom: 3.5em;
 }
 .header-nav {
     display: flex;
@@ -10,7 +10,7 @@ header {
     align-items: center;
 }
 h1 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: bolder;
 }
 ul {
@@ -22,7 +22,6 @@ ul {
 a {
     text-decoration: none;
     font-size: 1rem;
-    font-weight: 600;
 }
 .icons-container {
     display: flex;
