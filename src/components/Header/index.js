@@ -13,16 +13,16 @@ const Header = ({ openBag, setOpenBag }) => {
                 </h1>
                 <ul>
                     <li>
-                        <a href="/">Men</a>
+                        <Link to={"/clothing/men's-clothing"}>Men</Link>
                     </li>
                     <li>
-                        <a href="/">Women</a>
+                        <Link to={"/clothing/women's-clothing"}>Women</Link>
                     </li>
                     <li>
-                        <a href="/">Kids</a>
+                        <Link to={"/"}>Kids</Link>
                     </li>
                     <li>
-                        <a href="/">Accesories</a>
+                        <Link to={"/clothing/jewelery"}>Accesories</Link>
                     </li>
                 </ul>
                 <div className="icons-container">

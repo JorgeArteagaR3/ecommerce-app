@@ -1,0 +1,32 @@
+.image-skeleton {
+    width: 180px;
+    height: 230px;
+}
+.skeleton {
+    animation: loadingskeleton infinite 2.5s;
+    background-color: var(--newblack);
+    border-radius: 10px;
+}
+.item-price-skeleton {
+    height: 18px;
+    width: 50px;
+}
+.item-color-skeleton {
+    height: 18px;
+    width: 80px;
+}
+.item-name-skeleton {
+    height: 46px;
+    width: 100%;
+}
+@keyframes loadingskeleton {
+    0% {
+        opacity: 0.7;
+    }
+    50% {
+        opacity: 0.1;
+    }
+    100% {
+        opacity: 0.7;
+    }
+}

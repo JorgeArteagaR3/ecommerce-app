@@ -29,7 +29,7 @@ const Item = ({
                 <p className="quick-add">Quick Add</p>
                 <div className="item-sizes">
                     {sizes.map((size) => (
-                        <div key={size} onClick={sendBagItem}>
+                        <div key={size + id + name} onClick={sendBagItem}>
                             {size}
                         </div>
                     ))}

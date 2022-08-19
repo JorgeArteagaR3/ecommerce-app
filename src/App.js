@@ -4,7 +4,7 @@ import "./App.css";
 import { GenderClothing } from "./components/GenderClothing";
 import { Header } from "./components/Header";
 import { Home } from "./components/Home/index";
-
+import { BagModal } from "./components/BagModal/index";
 function App() {
     const [openBag, setOpenBag] = useState(false);
     const openBagFunc = () => setOpenBag(!openBag);
@@ -47,9 +47,22 @@ function App() {
                     />
                     <Route
                         path="/clothing/:gender"
-                        element={<GenderClothing />}
+                        element={
+                            <GenderClothing
+                                saveItem={saveItem}
+                                openBagFunc={openBagFunc}
+                            />
+                        }
                     />
                 </Routes>
+                <BagModal
+                    openBagFunc={openBagFunc}
+                    openBag={openBag}
+                    setOpenBag={setOpenBag}
+                    bagItems={bagItems}
+                    setBagItems={setBagItems}
+                    deleteItem={deleteItem}
+                />
             </BrowserRouter>
         </div>
     );
